@@ -2,8 +2,9 @@ import React from "react";
 import useFetch from "../hooks/useFetch";
 
 const Featured = () => {
+  const baseURL = import.meta.env.VITE_BASE_URL;
   const { data, loading } = useFetch(
-    "http://localhost:3001/hotels/city?cities=Chicago,Los Angeles,New York,Los Angeles"
+    `${baseURL}/hotels/city?cities=Chicago,Los Angeles,New York,Los Angeles`
   );
 
   return (

@@ -8,9 +8,10 @@ import { useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const Reserve = ({ expandModal, hotelId }) => {
+  const baseURL = import.meta.env.VITE_BASE_URL;
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { dates } = useContext(SearchContext);
-  const { data } = useFetch(`http://localhost:3001/hotels/room/${hotelId}`);
+  const { data } = useFetch(`${baseURL}/hotels/room/${hotelId}`);
 
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
@@ -50,10 +51,9 @@ const Reserve = ({ expandModal, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          const res = axios.put(
-            `http://localhost:3001/rooms/availability/${roomId}`,
-            { dates: allDates }
-          );
+          const res = axios.put(`${baseURL}/rooms/availability/${roomId}`, {
+            dates: allDates,
+          });
           return res.data;
         })
       );

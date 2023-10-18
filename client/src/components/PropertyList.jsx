@@ -2,7 +2,8 @@ import React from "react";
 import useFetch from "../hooks/useFetch";
 
 const PropertyList = () => {
-  const { data, loading } = useFetch("http://localhost:3001/hotels/type");
+  const baseURL = import.meta.env.VITE_BASE_URL;
+  const { data, loading } = useFetch(`${baseURL}/hotels/type`);
   const images = [
     "https://images.unsplash.com/photo-1504652517000-ae1068478c59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
     "https://images.unsplash.com/photo-1469022563428-aa04fef9f5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFwYXJ0bWVudHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60",

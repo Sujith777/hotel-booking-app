@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const baseURL = import.meta.env.VITE_BASE_URL;
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     username: undefined,
@@ -22,10 +23,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const response = await axios.post(
-        "http://localhost:3001/auth/login",
-        credentials
-      );
+      const response = await axios.post(`${baseURL}/auth/login`, credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
       navigate("/");
     } catch (error) {

@@ -2,9 +2,8 @@ import React from "react";
 import useFetch from "../hooks/useFetch";
 
 const FeaturedProperties = () => {
-  const { data, loading } = useFetch(
-    "http://localhost:3001/hotels?featured=true"
-  );
+  const baseURL = import.meta.env.VITE_BASE_URL;
+  const { data, loading } = useFetch(`${baseURL}/hotels?featured=true`);
 
   return (
     <div className="flex w-full justify-center flex-wrap items-center gap-4 p-4">

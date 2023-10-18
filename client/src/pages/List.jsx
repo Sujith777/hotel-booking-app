@@ -9,6 +9,7 @@ import SearchResult from "../components/SearchResult";
 import useFetch from "../hooks/useFetch.js";
 
 const List = () => {
+  const baseURL = import.meta.env.VITE_BASE_URL;
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
   const [dates, setDates] = useState(location.state.dates);
@@ -18,9 +19,7 @@ const List = () => {
   const [max, setMax] = useState(undefined);
 
   const { data, loading, reFetch } = useFetch(
-    `http://localhost:3001/hotels?city=${destination}&min=${min || 0}&max=${
-      max || 999
-    }`
+    `${baseURL}/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
   );
   const handleClick = () => {
     reFetch();

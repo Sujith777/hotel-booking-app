@@ -17,6 +17,7 @@ import { AuthContext } from "../context/AuthContext";
 import Reserve from "../components/Reserve";
 
 const Hotel = () => {
+  const baseURL = import.meta.env.VITE_BASE_URL;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -26,7 +27,7 @@ const Hotel = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
 
-  const { data, loading } = useFetch(`http://localhost:3001/hotels/find/${id}`);
+  const { data, loading } = useFetch(`${baseURL}/hotels/find/${id}`);
 
   const { dates, options } = useContext(SearchContext);
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;

@@ -30,30 +30,29 @@ const Login = () => {
       dispatch({ type: "LOGIN_FAILURE", payload: error.response.data });
     }
   };
-  console.log(user);
 
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-slate-200">
-      <div className="p-4 shadow-lg w-[80%] h-[80%] flex justify-center items-center m-auto flex-col md:gap-8 gap-6">
+      <div className="p-4 shadow-lg md:w-[1200px] md:h-[600px] h-[500px] w-[400px] flex justify-center items-center flex-col md:gap-8 gap-6">
         <h1 className="text-4xl md:text-3xl font-bold text-blue-600">
           Sign In
         </h1>
         <input
-          className="md:h-[10%] md:text-lg md:w-[30%] rounded-md p-2 w-[60%] h-[10%]"
+          className="md:h-[60px] md:text-lg md:w-[360px] rounded-md p-2 w-[300px] h-[50px]"
           type="text"
           placeholder="Username"
           id="username"
           onChange={handleChange}
         />
         <input
-          className="md:h-[10%] md:text-lg md:w-[30%] rounded-md p-2 w-[60%] h-[10%]"
+          className="md:h-[60px] md:text-lg md:w-[360px] rounded-md p-2 w-[300px] h-[50px]"
           type="password"
           placeholder="Password"
           id="password"
           onChange={handleChange}
         />
         <button
-          className="shadow-lg text-white md:w-[30%] md:h-[10%] h-[10%] w-[60%] bg-green-500 md:text-lg font-bold hover:bg-green-600 rounded-md"
+          className="shadow-lg text-white md:w-[360px] md:h-[60px] h-[50px] w-[300px] bg-green-500 md:text-lg font-bold hover:bg-green-600 rounded-md"
           onClick={handleLogin}
           disabled={loading}
         >

@@ -13,9 +13,11 @@ const Home = () => {
       <Header />
       <div className="flex flex-col gap-8">
         <Featured />
-        <h1 className="p-4 mt-4 font-bold text-2xl">Browse by property type</h1>
+        <h1 className="p-4 md:mt-4 font-bold text-2xl">
+          Browse by property type
+        </h1>
         <PropertyList />
-        <h1 className="mt-16 p-4 font-bold text-2xl">Homes guests love</h1>
+        <h1 className="md:mt-16 p-4 font-bold text-2xl">Homes guests love</h1>
         <FeaturedProperties />
         <EmailList />
         <Footer />

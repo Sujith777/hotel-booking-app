@@ -56,24 +56,21 @@ const Header = ({ type }) => {
   return (
     // SERVICES
     <div className=" bg-[#279EFF] text-white w-full p-4 mb-4">
-      <div className="flex gap-8 lg:gap-32 justify-center">
-        <div className="flex gap-2 lg:gap-4 justify-center items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
+      <div className="flex flex-wrap md:flex-row w-full md:gap-32 justify-center p-2">
+        <div className="flex gap-2 md:gap-4  items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
           <FontAwesomeIcon icon={faBed} />
           <span className="text-md">Stays</span>
         </div>
-        <div className="flex gap-2 lg:gap-4 justify-center items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
+        <div className="flex gap-2 md:gap-4 items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
           <FontAwesomeIcon icon={faPlane} />
           <span className="text-md">Flights</span>
         </div>
-        <div className="flex gap-2 lg:gap-4 justify-center items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
+        <div className="flex gap-2 md:gap-4 items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
           <FontAwesomeIcon icon={faCar} />
           <span className="text-md">Car Rentals</span>
         </div>
-        <div className="flex gap-2 lg:gap-4 justify-center items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
-          <FontAwesomeIcon icon={faBed} />
-          <span className="text-md">Attractions</span>
-        </div>
-        <div className="flex gap-2 lg:gap-4 justify-center items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
+
+        <div className="flex gap-2 md:gap-4 items-center hover:bg-blue-900 hover:scale-105 ease-in duration-300 p-2 hover:shadow-lg rounded-sm cursor-pointer hover:rounded-md">
           <FontAwesomeIcon icon={faTaxi} />
           <span className="text-md">Airport Taxis</span>
         </div>
@@ -81,7 +78,7 @@ const Header = ({ type }) => {
 
       {/* INFO */}
       {type !== "list" && (
-        <div className="mt-8 p-4">
+        <div className="p-4">
           <h1 className="text-4xl my-4">
             A lifetime of discounts? It&apos;s genius!
           </h1>
@@ -90,7 +87,7 @@ const Header = ({ type }) => {
             more with a free My BooKING account
           </p>
           {!user && (
-            <button className="bg-[#FFC436] rounded-lg p-2 text-gray-500">
+            <button className="bg-[#FFC436] font-bold text-lg rounded-lg p-2 text-gray-500">
               Sign In / Register
             </button>
           )}
@@ -99,11 +96,11 @@ const Header = ({ type }) => {
 
       {/* SEARCH SECTION */}
       {type !== "list" && (
-        <div className="flex justify-between items-center m-4 border-4 border-yellow-400 rounded-md py-2 bg-white">
+        <div className="flex text-lg md:text-sm md:flex-row flex-col gap-4 justify-center md:justify-evenly items-center m-4 border-4 border-yellow-400 rounded-md py-2 bg-white">
           <div className="flex px-2 gap-2 justify-center items-center text-gray-500">
             <FontAwesomeIcon icon={faBed} />
             <input
-              className="rounded-md focus:outline-none text-xs"
+              className="rounded-md w-[60%] md:w-full p-2 focus:outline-none"
               type="text"
               placeholder="Where are you going"
               onChange={(e) => setDestination(e.target.value)}
@@ -112,7 +109,7 @@ const Header = ({ type }) => {
           <div className="flex px-2 relative gap-2 justify-center items-center text-gray-500">
             <FontAwesomeIcon icon={faCalendarDays} />
             <span
-              className="cursor-pointer text-xs"
+              className="cursor-pointer"
               onClick={() => setOpenDate((prev) => !prev)}
             >
               {`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(
@@ -135,7 +132,7 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faPerson} />
             <span
               onClick={() => setOpenOptions((prev) => !prev)}
-              className="cursor-pointer text-xs"
+              className="cursor-pointer"
             >
               {`${options.adult} adult . ${options.children} children . ${options.room} room`}
             </span>
@@ -201,9 +198,9 @@ const Header = ({ type }) => {
               </div>
             )}
           </div>
-          <div className="p-2">
+          <div className="p-2 w-full md:w-[10%]">
             <button
-              className="text-gray-500 text-xs p-2 rounded-md bg-[#FFC436]"
+              className="text-gray-500 p-2 w-full rounded-md bg-[#FFC436] font-bold"
               onClick={handleSearch}
             >
               Search

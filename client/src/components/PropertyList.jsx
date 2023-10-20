@@ -13,7 +13,7 @@ const PropertyList = () => {
   ];
 
   return (
-    <div className="flex w-full justify-between items-center gap-4 px-4">
+    <div className="flex flex-col md:flex-row w-full justify-between items-center gap-4 px-4">
       {loading ? (
         "Loading"
       ) : (
@@ -22,10 +22,10 @@ const PropertyList = () => {
             images.map((img, idx) => (
               <div
                 key={idx}
-                className="p-4 md:h-[40vh] w-[17vw] h-[17vh] cursor-pointer hover:scale-105 ease-in duration-300"
+                className="p-4 md:h-[300px] w-full h-full cursor-pointer hover:scale-105 ease-in duration-300"
               >
                 <img
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-[350px] md:h-[300px] object-cover rounded-md"
                   src={img}
                   alt="Hotels"
                 />

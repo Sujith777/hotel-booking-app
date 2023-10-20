@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#0C356A] md:min-h-[10vh] h-[80px] w-full p-4 flex justify-between font-bold">
+    <div className="bg-[#0C356A] w-full p-4 flex justify-between font-bold">
       <div className="flex items-center justify-center">
         <Link to="/">
           <span className="text-yellow-300 text-xl m-2">My BooKING</span>

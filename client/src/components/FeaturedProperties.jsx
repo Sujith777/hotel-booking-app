@@ -6,7 +6,7 @@ const FeaturedProperties = () => {
   const { data, loading } = useFetch(`${baseURL}/hotels?featured=true`);
 
   return (
-    <div className="flex w-full justify-center flex-wrap items-center gap-4 p-4">
+    <div className="flex w-full flex-col md:flex-row justify-center items-center gap-4 p-4">
       {loading ? (
         "Loading"
       ) : (
@@ -15,7 +15,7 @@ const FeaturedProperties = () => {
             data.map((item) => (
               <div
                 key={item._id}
-                className="p-4 w-[27vw] h-[27vh] flex flex-col gap-1"
+                className="p-4 md:h-[250px] w-full text-center justify-center items-center flex flex-col gap-1"
               >
                 <img
                   className="w-full h-full object-cover rounded-md"
